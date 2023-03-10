@@ -9,13 +9,13 @@ const DIST_DIR = path.join(__dirname, "/dist");
 
 const devPlugins = [
     new HtmlWebpackPlugin({
-        chunks: ["tcs.bundle"],
+        chunks: ["tcs"],
         template: path.join(__dirname, "index.html"),
         filename: path.join(DIST_DIR, "index.html"),
         inject: "head",
     }),
     new HtmlWebpackPlugin({
-        chunks: ["tcs.bundle"],
+        chunks: ["tcs"],
         template: path.join(__dirname, "big.html"),
         filename: path.join(DIST_DIR, "big.html"),
         inject: "head",
@@ -54,8 +54,8 @@ module.exports = (env, argv) => ({
         minimizer: [new TerserPlugin(terserOptions(argv))]
     },
     entry: {
-        "tcs.bundle": path.join(SRC_DIR, "app.js"),
-        "tcs.bundle.min": path.join(SRC_DIR, "app.js")
+        "tcs": path.join(SRC_DIR, "app.js"),
+        "tcs.min": path.join(SRC_DIR, "app.js")
     },
     module: {
         rules: [
@@ -84,7 +84,7 @@ module.exports = (env, argv) => ({
         publicPath: argv.mode !== "production" ? "/" : "../dist/",
         umdNamedDefine: true
     },
-    devtool: argv.mode !== "production" ? "eval-cheap-module-source-map" : "source-map",
+    devtool: argv.mode !== "production" ? "source-map" : false,
     plugins: argv.mode !== "production" ? devPlugins : [new ESLintPlugin()],
     devServer: {
         static: SRC_DIR,
