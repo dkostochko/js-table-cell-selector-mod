@@ -32,7 +32,7 @@ export default class Buffer {
      * and makes a selection on it.
      */
     initSelectFake() {
-        const isRTL = document.documentElement.getAttribute('dir') == 'rtl';
+        const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
 
         this.fakeElem = document.createElement('textarea');
         // Prevent zooming on iOS
@@ -48,7 +48,7 @@ export default class Buffer {
         this.container.appendChild(this.fakeElem);
     }
 
-    onScroll (e) {
+    onScroll () {
         let yPosition = window.pageYOffset || document.documentElement.scrollTop;
         this.fakeElem.style.top = yPosition+"px";
     }

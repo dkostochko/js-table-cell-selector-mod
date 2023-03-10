@@ -3,14 +3,22 @@
         [
             "@babel/preset-env",
             {
-                "targets": {
-                    "browsers": [
-                        "last 2 versions",
-                        "ie >= 11"
-                    ]
-                },
                 "useBuiltIns": "usage",
-                "corejs": 3
+                "corejs": {
+                    "version" : "3",
+                    "proposals" : true,
+                    "debug": true
+                },
+                "debug" : true,
+                "modules": false,
+                "exclude": [
+                    "es.string.match",
+                    "es.string.replace",
+                    "es.array.reduce",
+                    "es.array.iterator",
+                    "es.string.trim",
+                    "web.dom-collections.iterator"
+                ]
             }
         ]
     ],

@@ -4,10 +4,10 @@ module.exports = {
         browser: true,
         node: true
     },
-    parser: "babel-eslint",
+    parser: "@babel/eslint-parser",
     parserOptions: {
         sourceType: "module",
-        parser: "babel-eslint"
+        parser: "@babel/eslint-parser"
     },
     extends: [
         "eslint:recommended"

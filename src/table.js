@@ -31,21 +31,23 @@ export default class Table {
     }
 
     addEvents() {
-        on(this.table, "mouseover", this._onMouseOver);
-        on(this.table, "mousedown", this._onMouseDown);
-        on(this.table, "mouseenter", this._onMouseEnter);
-        on(this.table, "mouseleave", this._onMouseLeave);
+        const table = this.table;
+        on(table, "mouseover", this._onMouseOver);
+        on(table, "mousedown", this._onMouseDown);
+        on(table, "mouseenter", this._onMouseEnter);
+        on(table, "mouseleave", this._onMouseLeave);
         on(document.body, "mouseup", this._onMouseUp);
-        on(this.table.ownerDocument, "click", this._onOutTableClick); // click outside the table
+        on(table.ownerDocument, "click", this._onOutTableClick); // click outside the table
     }
 
     removeEvents() {
-        off(this.table, "mouseover", this._onMouseOver);
-        off(this.table, "mousedown", this._onMouseDown);
-        off(this.table, "mouseenter", this._onMouseEnter);
-        off(this.table, "mouseleave", this._onMouseLeave);
+        const table = this.table;
+        off(table, "mouseover", this._onMouseOver);
+        off(table, "mousedown", this._onMouseDown);
+        off(table, "mouseenter", this._onMouseEnter);
+        off(table, "mouseleave", this._onMouseLeave);
         off(document.body, "mouseup", this._onMouseUp);
-        off(this.table.ownerDocument, "click", this._onOutTableClick);
+        off(table.ownerDocument, "click", this._onOutTableClick);
     }
 
     get isMouse () {
@@ -57,9 +59,9 @@ export default class Table {
         e = e || window.event;
 
         if ("which" in e)  // Gecko (Firefox), WebKit (Safari/Chrome) & Opera
-            isRightMB = e.which == 3;
+            isRightMB = e.which === 3;
         else if ("button" in e)  // IE, Opera
-            isRightMB = e.button == 2;
+            isRightMB = e.button === 2;
 
         return isRightMB;
     }
