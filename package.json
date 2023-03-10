@@ -4,8 +4,8 @@
   "description": "JS library allows you to select cells of HTML tables as well as cleaning, copying, cutting and pasting ",
   "main": "dist/tcs.bundle.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack -p --mode production",
-    "dev": "./node_modules/.bin/webpack-dev-server -p --env=development --mode development",
+    "build": "./node_modules/.bin/webpack --mode production",
+    "dev": "./node_modules/.bin/webpack-dev-server --env=development --mode development",
     "lint": "eslint --ext .js .",
     "lintfix": "eslint --fix --ext .js .",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -34,27 +34,36 @@
   "bugs": {
     "url": "https://github.com/darkridder/js-table-cell-selector/issues"
   },
+  "browserslist": {
+    "production": [
+      "supports es6-module",
+      "not IE 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 edge version",
+      "last 1 safari version"
+    ]
+  },
   "homepage": "https://github.com/darkridder/js-table-cell-selector#readme",
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-transform-object-assign": "^7.8.3",
-    "@babel/plugin-transform-parameters": "^7.8.7",
+    "@babel/core": "^7.21.0",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-transform-object-assign": "^7.18.6",
+    "@babel/plugin-transform-parameters": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-loader": "^3.0.3",
-    "terser-webpack-plugin": "^2.3.5",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
-  },
-  "dependencies": {
-    "@babel/core": "^7.8.7",
-    "@babel/polyfill": "^7.8.7",
-    "@babel/preset-env": "^7.8.7",
-    "babel-loader": "^8.0.6",
-    "core-js": "^3.6.4",
+    "babel-loader": "^9.1.2",
+    "core-js": "^3.29.0",
+    "eslint": "^8.35.0",
+    "eslint-webpack-plugin": "^4.0.0",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "object-copy": "^1.0.0",
-    "webpack": "^4.42.0"
+    "html-webpack-plugin": "^5.5.0",
+    "terser-webpack-plugin": "^5.3.7",
+    "webpack": "^5.76.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   }
 }
