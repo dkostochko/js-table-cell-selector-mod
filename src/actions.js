@@ -62,7 +62,7 @@ export default class Actions {
     iterateCells (c1, c2, callbackFn) {
         const matrix = this.obSelector.sizeMatrix;
         for (let iy = c1[0]; iy <= c2[0]; iy++) {
-            let cells = this.table.rows[iy].cells;
+            const cells = this.table.rows[iy].cells;
             for (let ix = c1[1]; ix <= c2[1]; ix++) {
                 if (!(matrix[iy][ix][0] < 0) && !(matrix[iy][ix][1] < 0)) {
                     callbackFn(iy, ix, cells[matrix[iy][ix][2]]);
@@ -79,9 +79,10 @@ export default class Actions {
     }
 
     paste (data, c1, c2) {
-        const matrix = this.obSelector.sizeMatrix;
-        const countR = this.obSelector.countRows;
-        const countC = this.obSelector.countCols;
+        const obSelector = this.obSelector;
+        const matrix = obSelector.sizeMatrix;
+        const countR = obSelector.countRows;
+        const countC = obSelector.countCols;
 
         let maxY = c1[0] + data.length;
         if (maxY > countR) maxY = countR;
@@ -106,7 +107,7 @@ export default class Actions {
                 }
 
                 let cell = this.table.rows[y].cells[matrix[y][x][2]];
-                if (!this.obSelector.isIgnoredCell(cell)) {
+                if (!obSelector.isIgnoredCell(cell)) {
                     cellFn(cell, data[iy - c1[0]][ix - c1[1]], [y, x]);
                 }
             }

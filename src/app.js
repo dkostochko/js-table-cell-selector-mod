@@ -13,6 +13,7 @@ export let _gOptions = {
     deselectOutTableClick: true,
     enableChanging: false,
     enableHotkeys: true,
+    // eslint-disable-next-line no-unused-vars
     getCellFn: function (cell, coord) {
         return cell.innerText;
     },
@@ -22,12 +23,17 @@ export let _gOptions = {
     //TODO: mergePasting: true,
     mergePastingGlue: ' ',
     mouseBlockSelection: true,
+    // eslint-disable-next-line no-unused-vars
     onSelect: function (prevState, cell, coord) { },
+    // eslint-disable-next-line no-unused-vars
     onDeselect: function (cell, coord) { },
+    // eslint-disable-next-line no-unused-vars
     onStartSelect: function (e, cell) { },
+    // eslint-disable-next-line no-unused-vars
     onFinishSelect: function (e) { },
     selectIgnoreClass: true,
     selectClass: 'tcs-select',
+    // eslint-disable-next-line no-unused-vars
     setCellFn: function (cell, data, coord) {
         cell.innerText = data;
     },
@@ -49,15 +55,17 @@ export default class TableCellSelector {
         this.enableChanging = _gOptions.enableChanging;
         this.enableHotkeys = _gOptions.enableHotkeys;
 
-        this.obEvent = new Event();
-        this.obEvent.startSelect = _gOptions.onStartSelect;
-        this.obEvent.finishSelect = _gOptions.onFinishSelect;
-        this.obEvent.select = _gOptions.onSelect;
-        this.obEvent.deselect = _gOptions.onDeselect;
+        const obEvent = new Event();
+        obEvent.startSelect = _gOptions.onStartSelect;
+        obEvent.finishSelect = _gOptions.onFinishSelect;
+        obEvent.select = _gOptions.onSelect;
+        obEvent.deselect = _gOptions.onDeselect;
+        this.obEvent = obEvent;
 
-        this.obSelector = new Selector(table, this.obEvent);
-        this.obTable = new Table(table, this.obSelector, this.obEvent, this);
-        this.obActions = new Actions(this.obSelector);
+        const obSelector = new Selector(table, obEvent);
+        this.obSelector =  obSelector;
+        this.obTable = new Table(table, obSelector, obEvent, this);
+        this.obActions = new Actions(obSelector);
         this.obBuffer = buffer;
         on(document.body, "keydown", this._onKeyDown);
     }
@@ -104,8 +112,7 @@ export default class TableCellSelector {
 
         const data = this.obActions.copy(c1, c2);
         if (this.obBuffer instanceof _Buffer &&  data !== false) {
-            let str = SheetClip.stringify(data);
-            this.obBuffer.copy(str);
+            this.obBuffer.copy(SheetClip.stringify(data));
         }
         return data;
     }
@@ -128,8 +135,7 @@ export default class TableCellSelector {
 
         const data = this.obActions.cut(c1, c2);
         if (this.obBuffer instanceof _Buffer && data !== false) {
-            let str = SheetClip.stringify(data);
-            this.obBuffer.copy(str);
+            this.obBuffer.copy(SheetClip.stringify(data));
         }
         return data;
     }

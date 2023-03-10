@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    table td, table th {
+      border: solid #000 1px;
+      padding: 5px;
+      /*width: 30px;
+      height: 20px;*/
+      text-align: center;
+      vertical-align: center;
+    }
+    thead {
+      background-color: #DDF;
+    }
+    tfoot {
+      background-color: #DFD;
+    }
+
+    .tcs-select {
+      background-color: #A6DCED;
+    }
+    .tcs-ignore {
+      background-color: #BBB;
+    }
+    .tcs-select.tcs-ignore,
+    .tcs-ignore .tcs-select {
+      background-color: #7AAAB9;
+    }
+
+    .interface {
+      font-size: 1.2em;
+    }
+    .interface input[type=number] {
+      width: 3em;
+    }
+    .tables {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+    }
+    #size-matrix {
+      margin-left: 3em;
+    }
+    .fake {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div id="size-matrix">
+  <strong>Size matrix</strong>, where cells contain values [back up, back left, col position]:<br>
+  <table></table>
+</div>
+<table border="1" id="tcs-table" class="wrapped fixed-width confluenceTable merged-header" style="width: 2710.0px;" data-tf-ready="true">
+  <colgroup><col style="width: 146.0px;"><col style="width: 112.0px;"><col style="width: 112.0px;"><col style="width: 95.0px;"><col style="width: 156.0px;"><col style="width: 182.0px;"><col style="width: 118.0px;"><col style="width: 205.0px;"><col style="width: 84.0px;"><col style="width: 97.0px;"><col style="width: 156.0px;"><col style="width: 562.0px;"><col style="width: 182.0px;"><col style="width: 68.0px;"><col style="width: 65.0px;"><col style="width: 83.0px;"><col style="width: 60.0px;"><col style="width: 79.0px;"><col style="width: 111.0px;"><col style="width: 36.0px;"></colgroup>
+  <thead>
+  <tr class="tf-header-hidden"><th><b>Code</b></th><th><b>Language</b></th><th><b>Rif.capitolato generale</b></th><th><b>Equipment type</b></th><th><b>Process</b></th><th><b>Equipment/technology subitem</b></th><th><b>Feature</b></th><th><b>Componente</b></th><th><b>Product</b></th><th><b>Type</b></th><th><b>Category</b></th><th><b>Guideline Description</b></th><th><b>Example</b></th><th><b>LINK</b></th><th><b>Check Progettazione</b><b>IO</b></th><th><b>Check Progettazione</b><b>NIO</b></th><th><b>Check</b><br><b>Accettazione</b><b>IO</b></th><th><b>Check</b><br><b>Accettazione</b><b>NIO</b></th><th><b>STATUS</b></th><th><br><br></th></tr>
+
+  <tr class="pivot-header"><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 121.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Code</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 88.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Language</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 80.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Rif.capitolato generale</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 66.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Equipment type</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 130.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Process</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 141.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Equipment/technology subitem</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 93.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Feature</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 178.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Componente</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 60.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Product</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 72.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Type</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 130.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Category</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 189.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Guideline Description</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 120.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Example</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 28.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>LINK</b></td><td class="tf-colspan-2" colspan="2" data-highlight-colour="#deebff" style="width: 64.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Check Progettazione</b></td><td class="tf-colspan-2 fake" colspan="1" data-highlight-colour="#deebff" style="width: 64px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Check Progettazione</b></td><td class="tf-colspan-2" colspan="2" data-highlight-colour="#deebff" style="width: 57.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Check</b><br><b>Accettazione</b></td><td class="tf-colspan-2 fake" colspan="1" data-highlight-colour="#deebff" style="width: 57px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Check</b><br><b>Accettazione</b></td><td class="tf-rowspan-2" data-highlight-colour="#deebff" rowspan="2" style="width: 60.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>STATUS</b></td><td><br></td></tr>
+  <tr class="pivot-header"><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 121px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Code</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 88px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Language</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 80px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Rif.capitolato generale</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 66px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Equipment type</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 130px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Process</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 141px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Equipment/technology subitem</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 93px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Feature</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 178px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Componente</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 60px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Product</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 72px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Type</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 130px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Category</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 189px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Guideline Description</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 120px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>Example</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 28px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>LINK</b></td><td class="highlight-#deebff" data-highlight-colour="#deebff" style="width: 25.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>IO</b></td><td class="highlight-#deebff" data-highlight-colour="#deebff" style="width: 39.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>NIO</b></td><td class="highlight-#deebff" data-highlight-colour="#deebff" style="width: 22.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>IO</b></td><td class="highlight-#deebff" data-highlight-colour="#deebff" style="width: 35.0px;text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>NIO</b></td><td class="tf-rowspan-2 fake" data-highlight-colour="#deebff" rowspan="-1" style="width: 60px; text-align: center;" title="Colore sfondo: 35% blu chiaro"><b>STATUS</b></td><td><br></td></tr>
+  </thead>
+  <tbody>
+  <tr><td style="width: 121.0px;">LEK_001</td><td style="width: 88.0px;">IT</td><td style="width: 80.0px;"><br></td><td style="width: 66.0px;">GEN</td><td style="width: 130.0px;">Manuale/<br>Automatico</td><td style="width: 141.0px;">LEK_PRES_TEST_002</td><td style="width: 93.0px;">Hardware</td><td style="width: 178.0px;">Circuito pneumatico di tenuta</td><td style="width: 60.0px;">GEN</td><td style="width: 72.0px;">Pneumatico</td><td style="width: 130.0px;">Circuito di collaudo Immissione/lettura pressione</td><td style="width: 189.0px;">Integrare il canale pneumatico di riempimento della pressione nell' apertura piu' grande del prodotto (ES AGB dal bocchettone) e il canale di lettura in un'aperutra diversa(ES: AGB da un tubetto).</td><td style="width: 120.0px;"><br></td><td style="width: 28.0px;"><br></td><td style="width: 25.0px;">x</td><td style="width: 39.0px;"><br></td><td style="width: 22.0px;"><br></td><td style="width: 35.0px;"><br></td><td style="width: 60.0px;">Approved</td><td><br></td></tr>
+  <tr><td style="width: 121.0px;">LEK_001</td><td style="width: 88.0px;">EN</td><td style="width: 80.0px;"><br></td><td style="width: 66.0px;">GEN</td><td style="width: 130.0px;">Manual/<br>Automatic</td><td style="width: 141.0px;">LEK_PRES_TEST_002</td><td style="width: 93.0px;">Hardware</td><td style="width: 178.0px;">Pneumatic sealing circuit</td><td style="width: 60.0px;">GEN</td><td style="width: 72.0px;">Pneumatic</td><td style="width: 130.0px;">Inlet test circuit / pressure reading</td><td style="width: 189.0px;">The pneumatic pressure filling channel (ES AGB from the nozzle) and the reading channel should be integrated in a different opening (ES: AGB from a tube).</td><td style="width: 120.0px;"><br></td><td style="width: 28.0px;"><br></td><td style="width: 25.0px;"><br></td><td style="width: 39.0px;"><br></td><td style="width: 22.0px;"><br></td><td style="width: 35.0px;"><br></td><td style="width: 60.0px;">Approved</td><td><br></td></tr>
+  <tr><td rowspan="5" style="width: 121.0px;" class="tf-rowspan-5">LEK_002</td><td rowspan="5" style="width: 88.0px;" class="tf-rowspan-5">IT</td><td rowspan="5" style="width: 80.0px;" class="tf-rowspan-5"><br></td><td rowspan="5" style="width: 66.0px;" class="tf-rowspan-5">GEN</td><td rowspan="5" style="width: 130.0px;" class="tf-rowspan-5">Manuale/<br>Automatico</td><td style="width: 141.0px;">LEK_PRES_TEST_002</td><td rowspan="5" style="width: 93.0px;" class="tf-rowspan-5">Hardware</td><td rowspan="5" style="width: 178.0px;" class="tf-rowspan-5">Circuito pneumatico di tenuta</td><td rowspan="5" style="width: 60.0px;" class="tf-rowspan-5">GEN</td><td rowspan="5" style="width: 72.0px;" class="tf-rowspan-5">Pneumatico</td><td rowspan="5" style="width: 130.0px;" class="tf-rowspan-5">Raccordi circuito di collaudo</td><td rowspan="5" style="width: 189.0px;" class="tf-rowspan-5">Tutti i raccordi del circuito di collaudo tenuta pressione/depressione(volume grande/sede sonda) devono essere del tipo a "ghiera" , non utilizzare raccordi con attacco rapido perché soggetti a&nbsp; perdite durante la fase di collaudo.I raccordi vanno fissati e deve essere utilizzato il sigillante sul filetto apposito per rendere la zona ermetica.</td><td rowspan="5" style="width: 120.0px;" class="tf-rowspan-5"><br></td><td rowspan="5" style="width: 28.0px;" class="tf-rowspan-5"><br></td><td rowspan="5" style="width: 25.0px;" class="tf-rowspan-5">x</td><td rowspan="5" style="width: 39.0px;" class="tf-rowspan-5"><br></td><td rowspan="5" style="width: 22.0px;" class="tf-rowspan-5"><br></td><td rowspan="5" style="width: 35.0px;" class="tf-rowspan-5"><br></td><td rowspan="5" style="width: 60.0px;" class="tf-rowspan-5">Approved</td><td><br></td></tr>
+  <tr><td rowspan="4" style="width: 121px;" class="tf-rowspan-5 fake">LEK_002</td><td rowspan="4" style="width: 88px;" class="tf-rowspan-5 fake">IT</td><td rowspan="4" style="width: 80px;" class="tf-rowspan-5 fake"><br></td><td rowspan="4" style="width: 66px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="4" style="width: 130px;" class="tf-rowspan-5 fake">Manuale/<br>Automatico</td><td style="width: 141.0px;">LEK_CHA_TEST_001</td><td rowspan="4" style="width: 93px;" class="tf-rowspan-5 fake">Hardware</td><td rowspan="4" style="width: 178px;" class="tf-rowspan-5 fake">Circuito pneumatico di tenuta</td><td rowspan="4" style="width: 60px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="4" style="width: 72px;" class="tf-rowspan-5 fake">Pneumatico</td><td rowspan="4" style="width: 130px;" class="tf-rowspan-5 fake">Raccordi circuito di collaudo</td><td rowspan="4" style="width: 189px;" class="tf-rowspan-5 fake">Tutti i raccordi del circuito di collaudo tenuta pressione/depressione(volume grande/sede sonda) devono essere del tipo a "ghiera" , non utilizzare raccordi con attacco rapido perché soggetti a&nbsp; perdite durante la fase di collaudo.I raccordi vanno fissati e deve essere utilizzato il sigillante sul filetto apposito per rendere la zona ermetica.</td><td rowspan="4" style="width: 120px;" class="tf-rowspan-5 fake"><br></td><td rowspan="4" style="width: 28px;" class="tf-rowspan-5 fake"><br></td><td rowspan="4" style="width: 25px;" class="tf-rowspan-5 fake">x</td><td rowspan="4" style="width: 39px;" class="tf-rowspan-5 fake"><br></td><td rowspan="4" style="width: 22px;" class="tf-rowspan-5 fake"><br></td><td rowspan="4" style="width: 35px;" class="tf-rowspan-5 fake"><br></td><td rowspan="4" style="width: 60px;" class="tf-rowspan-5 fake">Approved</td><td><br></td></tr>
+  <tr><td rowspan="3" style="width: 121px;" class="tf-rowspan-5 fake">LEK_002</td><td rowspan="3" style="width: 88px;" class="tf-rowspan-5 fake">IT</td><td rowspan="3" style="width: 80px;" class="tf-rowspan-5 fake"><br></td><td rowspan="3" style="width: 66px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="3" style="width: 130px;" class="tf-rowspan-5 fake">Manuale/<br>Automatico</td><td style="width: 141.0px;">LEK_HEL_TEST_001</td><td rowspan="3" style="width: 93px;" class="tf-rowspan-5 fake">Hardware</td><td rowspan="3" style="width: 178px;" class="tf-rowspan-5 fake">Circuito pneumatico di tenuta</td><td rowspan="3" style="width: 60px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="3" style="width: 72px;" class="tf-rowspan-5 fake">Pneumatico</td><td rowspan="3" style="width: 130px;" class="tf-rowspan-5 fake">Raccordi circuito di collaudo</td><td rowspan="3" style="width: 189px;" class="tf-rowspan-5 fake">Tutti i raccordi del circuito di collaudo tenuta pressione/depressione(volume grande/sede sonda) devono essere del tipo a "ghiera" , non utilizzare raccordi con attacco rapido perché soggetti a&nbsp; perdite durante la fase di collaudo.I raccordi vanno fissati e deve essere utilizzato il sigillante sul filetto apposito per rendere la zona ermetica.</td><td rowspan="3" style="width: 120px;" class="tf-rowspan-5 fake"><br></td><td rowspan="3" style="width: 28px;" class="tf-rowspan-5 fake"><br></td><td rowspan="3" style="width: 25px;" class="tf-rowspan-5 fake">x</td><td rowspan="3" style="width: 39px;" class="tf-rowspan-5 fake"><br></td><td rowspan="3" style="width: 22px;" class="tf-rowspan-5 fake"><br></td><td rowspan="3" style="width: 35px;" class="tf-rowspan-5 fake"><br></td><td rowspan="3" style="width: 60px;" class="tf-rowspan-5 fake">Approved</td><td><br></td></tr>
+  <tr><td rowspan="2" style="width: 121px;" class="tf-rowspan-5 fake">LEK_002</td><td rowspan="2" style="width: 88px;" class="tf-rowspan-5 fake">IT</td><td rowspan="2" style="width: 80px;" class="tf-rowspan-5 fake"><br></td><td rowspan="2" style="width: 66px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="2" style="width: 130px;" class="tf-rowspan-5 fake">Manuale/<br>Automatico</td><td style="width: 141.0px;">FLOW_TEST_001</td><td rowspan="2" style="width: 93px;" class="tf-rowspan-5 fake">Hardware</td><td rowspan="2" style="width: 178px;" class="tf-rowspan-5 fake">Circuito pneumatico di tenuta</td><td rowspan="2" style="width: 60px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="2" style="width: 72px;" class="tf-rowspan-5 fake">Pneumatico</td><td rowspan="2" style="width: 130px;" class="tf-rowspan-5 fake">Raccordi circuito di collaudo</td><td rowspan="2" style="width: 189px;" class="tf-rowspan-5 fake">Tutti i raccordi del circuito di collaudo tenuta pressione/depressione(volume grande/sede sonda) devono essere del tipo a "ghiera" , non utilizzare raccordi con attacco rapido perché soggetti a&nbsp; perdite durante la fase di collaudo.I raccordi vanno fissati e deve essere utilizzato il sigillante sul filetto apposito per rendere la zona ermetica.</td><td rowspan="2" style="width: 120px;" class="tf-rowspan-5 fake"><br></td><td rowspan="2" style="width: 28px;" class="tf-rowspan-5 fake"><br></td><td rowspan="2" style="width: 25px;" class="tf-rowspan-5 fake">x</td><td rowspan="2" style="width: 39px;" class="tf-rowspan-5 fake"><br></td><td rowspan="2" style="width: 22px;" class="tf-rowspan-5 fake"><br></td><td rowspan="2" style="width: 35px;" class="tf-rowspan-5 fake"><br></td><td rowspan="2" style="width: 60px;" class="tf-rowspan-5 fake">Approved</td><td><br></td></tr>
+  <tr><td rowspan="1" style="width: 121px;" class="tf-rowspan-5 fake">LEK_002</td><td rowspan="1" style="width: 88px;" class="tf-rowspan-5 fake">IT</td><td rowspan="1" style="width: 80px;" class="tf-rowspan-5 fake"><br></td><td rowspan="1" style="width: 66px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="1" style="width: 130px;" class="tf-rowspan-5 fake">Manuale/<br>Automatico</td><td style="width: 141.0px;">FLOW_TEST_002</td><td rowspan="1" style="width: 93px;" class="tf-rowspan-5 fake">Hardware</td><td rowspan="1" style="width: 178px;" class="tf-rowspan-5 fake">Circuito pneumatico di tenuta</td><td rowspan="1" style="width: 60px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="1" style="width: 72px;" class="tf-rowspan-5 fake">Pneumatico</td><td rowspan="1" style="width: 130px;" class="tf-rowspan-5 fake">Raccordi circuito di collaudo</td><td rowspan="1" style="width: 189px;" class="tf-rowspan-5 fake">Tutti i raccordi del circuito di collaudo tenuta pressione/depressione(volume grande/sede sonda) devono essere del tipo a "ghiera" , non utilizzare raccordi con attacco rapido perché soggetti a&nbsp; perdite durante la fase di collaudo.I raccordi vanno fissati e deve essere utilizzato il sigillante sul filetto apposito per rendere la zona ermetica.</td><td rowspan="1" style="width: 120px;" class="tf-rowspan-5 fake"><br></td><td rowspan="1" style="width: 28px;" class="tf-rowspan-5 fake"><br></td><td rowspan="1" style="width: 25px;" class="tf-rowspan-5 fake">x</td><td rowspan="1" style="width: 39px;" class="tf-rowspan-5 fake"><br></td><td rowspan="1" style="width: 22px;" class="tf-rowspan-5 fake"><br></td><td rowspan="1" style="width: 35px;" class="tf-rowspan-5 fake"><br></td><td rowspan="1" style="width: 60px;" class="tf-rowspan-5 fake">Approved</td><td><br></td></tr>
+  <tr><td rowspan="5" style="width: 121.0px;" class="tf-rowspan-5">LEK_002</td><td rowspan="5" style="width: 88.0px;" class="tf-rowspan-5">EN</td><td rowspan="5" style="width: 80.0px;" class="tf-rowspan-5"><br></td><td rowspan="5" style="width: 66.0px;" class="tf-rowspan-5">GEN</td><td rowspan="5" style="width: 130.0px;" class="tf-rowspan-5">Manual/<br>Automatic</td><td style="width: 141.0px;">LEK_PRES_TEST_002</td><td rowspan="5" style="width: 93.0px;" class="tf-rowspan-5">Hardware</td><td rowspan="5" style="width: 178.0px;" class="tf-rowspan-5">Pneumatic sealing circuit</td><td rowspan="5" style="width: 60.0px;" class="tf-rowspan-5">GEN</td><td rowspan="5" style="width: 72.0px;" class="tf-rowspan-5">Pneumatic</td><td rowspan="5" style="width: 130.0px;" class="tf-rowspan-5">Couplings test circuit</td><td rowspan="5" style="width: 189.0px;" class="tf-rowspan-5">All fittings of the pressure-tightness/depression test circuit (large volume/probe seat) must be of the "ring nut" type. Do not use quick-connect fittings as they are prone to leakage during testing. The fittings should be secured using sealant on the appropriate thread to make the area airtight.</td><td rowspan="5" style="width: 120.0px;" class="tf-rowspan-5"><br></td><td rowspan="5" style="width: 28.0px;" class="tf-rowspan-5"><br></td><td rowspan="5" style="width: 25.0px;" class="tf-rowspan-5"><br></td><td rowspan="5" style="width: 39.0px;" class="tf-rowspan-5"><br></td><td rowspan="5" style="width: 22.0px;" class="tf-rowspan-5"><br></td><td rowspan="5" style="width: 35.0px;" class="tf-rowspan-5"><br></td><td rowspan="5" style="width: 60.0px;" class="tf-rowspan-5">Approved</td><td><br></td></tr>
+  <tr><td rowspan="4" style="width: 121px;" class="tf-rowspan-5 fake">LEK_002</td><td rowspan="4" style="width: 88px;" class="tf-rowspan-5 fake">EN</td><td rowspan="4" style="width: 80px;" class="tf-rowspan-5 fake"><br></td><td rowspan="4" style="width: 66px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="4" style="width: 130px;" class="tf-rowspan-5 fake">Manual/<br>Automatic</td><td style="width: 141.0px;">LEK_CHA_TEST_001</td><td rowspan="4" style="width: 93px;" class="tf-rowspan-5 fake">Hardware</td><td rowspan="4" style="width: 178px;" class="tf-rowspan-5 fake">Pneumatic sealing circuit</td><td rowspan="4" style="width: 60px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="4" style="width: 72px;" class="tf-rowspan-5 fake">Pneumatic</td><td rowspan="4" style="width: 130px;" class="tf-rowspan-5 fake">Couplings test circuit</td><td rowspan="4" style="width: 189px;" class="tf-rowspan-5 fake">All fittings of the pressure-tightness/depression test circuit (large volume/probe seat) must be of the "ring nut" type. Do not use quick-connect fittings as they are prone to leakage during testing. The fittings should be secured using sealant on the appropriate thread to make the area airtight.</td><td rowspan="4" style="width: 120px;" class="tf-rowspan-5 fake"><br></td><td rowspan="4" style="width: 28px;" class="tf-rowspan-5 fake"><br></td><td rowspan="4" style="width: 25px;" class="tf-rowspan-5 fake"><br></td><td rowspan="4" style="width: 39px;" class="tf-rowspan-5 fake"><br></td><td rowspan="4" style="width: 22px;" class="tf-rowspan-5 fake"><br></td><td rowspan="4" style="width: 35px;" class="tf-rowspan-5 fake"><br></td><td rowspan="4" style="width: 60px;" class="tf-rowspan-5 fake">Approved</td><td><br></td></tr>
+  <tr><td rowspan="3" style="width: 121px;" class="tf-rowspan-5 fake">LEK_002</td><td rowspan="3" style="width: 88px;" class="tf-rowspan-5 fake">EN</td><td rowspan="3" style="width: 80px;" class="tf-rowspan-5 fake"><br></td><td rowspan="3" style="width: 66px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="3" style="width: 130px;" class="tf-rowspan-5 fake">Manual/<br>Automatic</td><td style="width: 141.0px;">LEK_HEL_TEST_001</td><td rowspan="3" style="width: 93px;" class="tf-rowspan-5 fake">Hardware</td><td rowspan="3" style="width: 178px;" class="tf-rowspan-5 fake">Pneumatic sealing circuit</td><td rowspan="3" style="width: 60px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="3" style="width: 72px;" class="tf-rowspan-5 fake">Pneumatic</td><td rowspan="3" style="width: 130px;" class="tf-rowspan-5 fake">Couplings test circuit</td><td rowspan="3" style="width: 189px;" class="tf-rowspan-5 fake">All fittings of the pressure-tightness/depression test circuit (large volume/probe seat) must be of the "ring nut" type. Do not use quick-connect fittings as they are prone to leakage during testing. The fittings should be secured using sealant on the appropriate thread to make the area airtight.</td><td rowspan="3" style="width: 120px;" class="tf-rowspan-5 fake"><br></td><td rowspan="3" style="width: 28px;" class="tf-rowspan-5 fake"><br></td><td rowspan="3" style="width: 25px;" class="tf-rowspan-5 fake"><br></td><td rowspan="3" style="width: 39px;" class="tf-rowspan-5 fake"><br></td><td rowspan="3" style="width: 22px;" class="tf-rowspan-5 fake"><br></td><td rowspan="3" style="width: 35px;" class="tf-rowspan-5 fake"><br></td><td rowspan="3" style="width: 60px;" class="tf-rowspan-5 fake">Approved</td><td><br></td></tr>
+  <tr><td rowspan="2" style="width: 121px;" class="tf-rowspan-5 fake">LEK_002</td><td rowspan="2" style="width: 88px;" class="tf-rowspan-5 fake">EN</td><td rowspan="2" style="width: 80px;" class="tf-rowspan-5 fake"><br></td><td rowspan="2" style="width: 66px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="2" style="width: 130px;" class="tf-rowspan-5 fake">Manual/<br>Automatic</td><td style="width: 141.0px;">FLOW_TEST_001</td><td rowspan="2" style="width: 93px;" class="tf-rowspan-5 fake">Hardware</td><td rowspan="2" style="width: 178px;" class="tf-rowspan-5 fake">Pneumatic sealing circuit</td><td rowspan="2" style="width: 60px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="2" style="width: 72px;" class="tf-rowspan-5 fake">Pneumatic</td><td rowspan="2" style="width: 130px;" class="tf-rowspan-5 fake">Couplings test circuit</td><td rowspan="2" style="width: 189px;" class="tf-rowspan-5 fake">All fittings of the pressure-tightness/depression test circuit (large volume/probe seat) must be of the "ring nut" type. Do not use quick-connect fittings as they are prone to leakage during testing. The fittings should be secured using sealant on the appropriate thread to make the area airtight.</td><td rowspan="2" style="width: 120px;" class="tf-rowspan-5 fake"><br></td><td rowspan="2" style="width: 28px;" class="tf-rowspan-5 fake"><br></td><td rowspan="2" style="width: 25px;" class="tf-rowspan-5 fake"><br></td><td rowspan="2" style="width: 39px;" class="tf-rowspan-5 fake"><br></td><td rowspan="2" style="width: 22px;" class="tf-rowspan-5 fake"><br></td><td rowspan="2" style="width: 35px;" class="tf-rowspan-5 fake"><br></td><td rowspan="2" style="width: 60px;" class="tf-rowspan-5 fake">Approved</td><td><br></td></tr>
+  <tr><td rowspan="1" style="width: 121px;" class="tf-rowspan-5 fake">LEK_002</td><td rowspan="1" style="width: 88px;" class="tf-rowspan-5 fake">EN</td><td rowspan="1" style="width: 80px;" class="tf-rowspan-5 fake"><br></td><td rowspan="1" style="width: 66px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="1" style="width: 130px;" class="tf-rowspan-5 fake">Manual/<br>Automatic</td><td style="width: 141.0px;">FLOW_TEST_002</td><td rowspan="1" style="width: 93px;" class="tf-rowspan-5 fake">Hardware</td><td rowspan="1" style="width: 178px;" class="tf-rowspan-5 fake">Pneumatic sealing circuit</td><td rowspan="1" style="width: 60px;" class="tf-rowspan-5 fake">GEN</td><td rowspan="1" style="width: 72px;" class="tf-rowspan-5 fake">Pneumatic</td><td rowspan="1" style="width: 130px;" class="tf-rowspan-5 fake">Couplings test circuit</td><td rowspan="1" style="width: 189px;" class="tf-rowspan-5 fake">All fittings of the pressure-tightness/depression test circuit (large volume/probe seat) must be of the "ring nut" type. Do not use quick-connect fittings as they are prone to leakage during testing. The fittings should be secured using sealant on the appropriate thread to make the area airtight.</td><td rowspan="1" style="width: 120px;" class="tf-rowspan-5 fake"><br></td><td rowspan="1" style="width: 28px;" class="tf-rowspan-5 fake"><br></td><td rowspan="1" style="width: 25px;" class="tf-rowspan-5 fake"><br></td><td rowspan="1" style="width: 39px;" class="tf-rowspan-5 fake"><br></td><td rowspan="1" style="width: 22px;" class="tf-rowspan-5 fake"><br></td><td rowspan="1" style="width: 35px;" class="tf-rowspan-5 fake"><br></td><td rowspan="1" style="width: 60px;" class="tf-rowspan-5 fake">Approved</td><td><br></td></tr>
+  <tr><td rowspan="2" style="width: 121.0px;" class="tf-rowspan-2">LEK_003</td><td rowspan="2" style="width: 88.0px;" class="tf-rowspan-2">IT</td><td rowspan="2" style="width: 80.0px;" class="tf-rowspan-2"><br></td><td rowspan="2" style="width: 66.0px;" class="tf-rowspan-2">GEN</td><td rowspan="2" style="width: 130.0px;" class="tf-rowspan-2">Manuale/<br>Automatico</td><td style="width: 141.0px;">LEK_PRES_TEST_002</td><td rowspan="2" style="width: 93.0px;" class="tf-rowspan-2">Hardware</td><td rowspan="2" style="width: 178.0px;" class="tf-rowspan-2">Circuito pneumatico di tenuta</td><td rowspan="2" style="width: 60.0px;" class="tf-rowspan-2">GEN</td><td rowspan="2" style="width: 72.0px;" class="tf-rowspan-2">Pneumatico</td><td rowspan="2" style="width: 130.0px;" class="tf-rowspan-2">Valvola circuito tenuta</td><td rowspan="2" style="width: 189.0px;" class="tf-rowspan-2">Utilizzare valvola ad otturatore (Burkert) per mantenere stagno il circuito. Non utilizzare valvole a membrana. Vedi lista materiali ricambi.</td><td rowspan="2" style="width: 120.0px;" class="tf-rowspan-2"><br></td><td rowspan="2" style="width: 28.0px;" class="tf-rowspan-2"><br></td><td rowspan="2" style="width: 25.0px;" class="tf-rowspan-2">x</td><td rowspan="2" style="width: 39.0px;" class="tf-rowspan-2"><br></td><td rowspan="2" style="width: 22.0px;" class="tf-rowspan-2"><br></td><td rowspan="2" style="width: 35.0px;" class="tf-rowspan-2"><br></td><td rowspan="2" style="width: 60.0px;" class="tf-rowspan-2">Approved</td><td><br></td></tr>
+  <tr><td rowspan="1" style="width: 121px;" class="tf-rowspan-2 fake">LEK_003</td><td rowspan="1" style="width: 88px;" class="tf-rowspan-2 fake">IT</td><td rowspan="1" style="width: 80px;" class="tf-rowspan-2 fake"><br></td><td rowspan="1" style="width: 66px;" class="tf-rowspan-2 fake">GEN</td><td rowspan="1" style="width: 130px;" class="tf-rowspan-2 fake">Manuale/<br>Automatico</td><td style="width: 141.0px;">LEK_CHA_TEST_001</td><td rowspan="1" style="width: 93px;" class="tf-rowspan-2 fake">Hardware</td><td rowspan="1" style="width: 178px;" class="tf-rowspan-2 fake">Circuito pneumatico di tenuta</td><td rowspan="1" style="width: 60px;" class="tf-rowspan-2 fake">GEN</td><td rowspan="1" style="width: 72px;" class="tf-rowspan-2 fake">Pneumatico</td><td rowspan="1" style="width: 130px;" class="tf-rowspan-2 fake">Valvola circuito tenuta</td><td rowspan="1" style="width: 189px;" class="tf-rowspan-2 fake">Utilizzare valvola ad otturatore (Burkert) per mantenere stagno il circuito. Non utilizzare valvole a membrana. Vedi lista materiali ricambi.</td><td rowspan="1" style="width: 120px;" class="tf-rowspan-2 fake"><br></td><td rowspan="1" style="width: 28px;" class="tf-rowspan-2 fake"><br></td><td rowspan="1" style="width: 25px;" class="tf-rowspan-2 fake">x</td><td rowspan="1" style="width: 39px;" class="tf-rowspan-2 fake"><br></td><td rowspan="1" style="width: 22px;" class="tf-rowspan-2 fake"><br></td><td rowspan="1" style="width: 35px;" class="tf-rowspan-2 fake"><br></td><td rowspan="1" style="width: 60px;" class="tf-rowspan-2 fake">Approved</td><td><br></td></tr>
+  <tr><td rowspan="2" style="width: 121.0px;" class="tf-rowspan-2">LEK_003</td><td rowspan="2" style="width: 88.0px;" class="tf-rowspan-2">EN</td><td rowspan="2" style="width: 80.0px;" class="tf-rowspan-2"><br></td><td rowspan="2" style="width: 66.0px;" class="tf-rowspan-2">GEN</td><td rowspan="2" style="width: 130.0px;" class="tf-rowspan-2">Manual/<br>Automatic</td><td style="width: 141.0px;">LEK_PRES_TEST_002</td><td rowspan="2" style="width: 93.0px;" class="tf-rowspan-2">Hardware</td><td rowspan="2" style="width: 178.0px;" class="tf-rowspan-2">Pneumatic sealing circuit</td><td rowspan="2" style="width: 60.0px;" class="tf-rowspan-2">GEN</td><td rowspan="2" style="width: 72.0px;" class="tf-rowspan-2">Pneumatic</td><td rowspan="2" style="width: 130.0px;" class="tf-rowspan-2">Sealing circuit valve</td><td rowspan="2" style="width: 189.0px;" class="tf-rowspan-2">Use poppet valves (Burkert) to keep the circuit watertight. Do not use diaphragm valves. See spare parts list.</td><td rowspan="2" style="width: 120.0px;" class="tf-rowspan-2"><br></td><td rowspan="2" style="width: 28.0px;" class="tf-rowspan-2"><br></td><td rowspan="2" style="width: 25.0px;" class="tf-rowspan-2"><br></td><td rowspan="2" style="width: 39.0px;" class="tf-rowspan-2"><br></td><td rowspan="2" style="width: 22.0px;" class="tf-rowspan-2"><br></td><td rowspan="2" style="width: 35.0px;" class="tf-rowspan-2"><br></td><td rowspan="2" style="width: 60.0px;" class="tf-rowspan-2">Approved</td><td><br></td></tr>
+  <tr><td rowspan="1" style="width: 121px;" class="tf-rowspan-2 fake">LEK_003</td><td rowspan="1" style="width: 88px;" class="tf-rowspan-2 fake">EN</td><td rowspan="1" style="width: 80px;" class="tf-rowspan-2 fake"><br></td><td rowspan="1" style="width: 66px;" class="tf-rowspan-2 fake">GEN</td><td rowspan="1" style="width: 130px;" class="tf-rowspan-2 fake">Manual/<br>Automatic</td><td style="width: 141.0px;">LEK_CHA_TEST_001</td><td rowspan="1" style="width: 93px;" class="tf-rowspan-2 fake">Hardware</td><td rowspan="1" style="width: 178px;" class="tf-rowspan-2 fake">Pneumatic sealing circuit</td><td rowspan="1" style="width: 60px;" class="tf-rowspan-2 fake">GEN</td><td rowspan="1" style="width: 72px;" class="tf-rowspan-2 fake">Pneumatic</td><td rowspan="1" style="width: 130px;" class="tf-rowspan-2 fake">Sealing circuit valve</td><td rowspan="1" style="width: 189px;" class="tf-rowspan-2 fake">Use poppet valves (Burkert) to keep the circuit watertight. Do not use diaphragm valves. See spare parts list.</td><td rowspan="1" style="width: 120px;" class="tf-rowspan-2 fake"><br></td><td rowspan="1" style="width: 28px;" class="tf-rowspan-2 fake"><br></td><td rowspan="1" style="width: 25px;" class="tf-rowspan-2 fake"><br></td><td rowspan="1" style="width: 39px;" class="tf-rowspan-2 fake"><br></td><td rowspan="1" style="width: 22px;" class="tf-rowspan-2 fake"><br></td><td rowspan="1" style="width: 35px;" class="tf-rowspan-2 fake"><br></td><td rowspan="1" style="width: 60px;" class="tf-rowspan-2 fake">Approved</td><td><br></td></tr>
+  <tr><td style="width: 121.0px;">LEK_004</td><td style="width: 88.0px;">IT</td><td style="width: 80.0px;"><br></td><td style="width: 66.0px;">GEN</td><td style="width: 130.0px;">Manuale/<br>Automatico</td><td style="width: 141.0px;">LEK_PRES_TEST_002</td><td style="width: 93.0px;">Hardware</td><td style="width: 178.0px;">Circuito pneumatico di tenuta</td><td style="width: 60.0px;">GEN</td><td style="width: 72.0px;">Pneumatico</td><td style="width: 130.0px;">Circuito di collaudo macchine intercambiabili</td><td style="width: 189.0px;">Nel caso in cui il prodotto da collaudare presenti sia il collaudo volume grande che collaudo sede sonda procedere in questo modo:<br>1) Utilizzare il circuito della macchina base per il collaudo volume grande<br>2) Integrare circuito collaudo sede sonda sul posaggio (vedi punti specifici "Collaudo sede sonda")</td><td style="width: 120.0px;"><br></td><td style="width: 28.0px;"><br></td><td style="width: 25.0px;"><br></td><td style="width: 39.0px;"><br></td><td style="width: 22.0px;"><br></td><td style="width: 35.0px;"><br></td><td style="width: 60.0px;">Approved</td><td><br></td></tr>
+  <tr><td style="width: 121.0px;">LEK_004</td><td style="width: 88.0px;">EN</td><td style="width: 80.0px;"><br></td><td style="width: 66.0px;">GEN</td><td style="width: 130.0px;">Manual/<br>Automatic</td><td style="width: 141.0px;">LEK_PRES_TEST_002</td><td style="width: 93.0px;">Hardware</td><td style="width: 178.0px;">Pneumatic sealing circuit</td><td style="width: 60.0px;">GEN</td><td style="width: 72.0px;">Pneumatic</td><td style="width: 130.0px;">Interchangable machine test circuit</td><td style="width: 189.0px;">In case the product to be tested has to perform both the large volume test and the probe seat test, proceed as follows:<br>1) Use the circuit of the basic machine for the large volume test.<br>2) Integrate the probe seat test circuit on the installation (see specific points "Probe seat test").</td><td style="width: 120.0px;"><br></td><td style="width: 28.0px;"><br></td><td style="width: 25.0px;"><br></td><td style="width: 39.0px;"><br></td><td style="width: 22.0px;"><br></td><td style="width: 35.0px;"><br></td><td style="width: 60.0px;">Approved</td><td><br></td></tr>
+  </tbody>
+</table>
+<script>
+  document.addEventListener("DOMContentLoaded", function(e) {
+    console.log('example');
+    var table = document.getElementById("tcs-table");
+    var options = {
+      changeTracking: true,
+      deselectOutTableClick: false,
+      enableChanging: true,
+      onStartSelect: function (event, cell) {
+        console.log("start select");
+      },
+      onSelect: function (prevState, cell, coord) {
+        console.log('select',prevState, coord);
+      },
+      onDeselect: function (cell, coord) {
+        console.log('deselect',coord);
+      },
+      onFinishSelect: function (event) {
+        console.log("finish select");
+      }
+    };
+    var buffer = new TableCellSelector.Buffer();
+    var tcs = new TableCellSelector(table, options, buffer);
+
+    // out size matrix
+    var sizeTable = document.getElementById("size-matrix").getElementsByTagName("table")[0];
+    tcs.obSelector.matrix.forEach(function(rowData) {
+      var row = document.createElement('tr');
+      rowData.forEach(function (cellData) {
+        var cell = document.createElement('td');
+        cell.appendChild(document.createTextNode(cellData));
+        row.appendChild(cell);
+      });
+      sizeTable.appendChild(row);
+    });
+
+    function getCoord() {
+      return [
+        [
+          document.getElementsByName("coord1-y")[0].value,
+          document.getElementsByName("coord1-x")[0].value
+        ],
+        [
+          document.getElementsByName("coord2-y")[0].value,
+          document.getElementsByName("coord2-x")[0].value
+        ]
+      ]
+    }
+
+  /*  document.getElementsByName("deselectOutTableClick")[0].onclick = function (e) {
+      tcs.destroy();
+      options["deselectOutTableClick"] = this.checked;
+      tcs = new TableCellSelector(table, options, buffer);
+    };
+    document.getElementsByName("enableChanging")[0].onclick = function (e) {
+      tcs.destroy();
+      options["enableChanging"] = this.checked;
+      tcs = new TableCellSelector(table, options, buffer);
+    };
+    document.getElementsByName("selectIgnoreClass")[0].onclick = function (e) {
+      options["selectIgnoreClass"] = this.checked;
+      tcs.destroy();
+      tcs = new TableCellSelector(table, options, buffer);
+    };
+    document.getElementsByName("ignoreThead")[0].onclick = function (e) {
+      options["ignoreThead"] = this.checked;
+      tcs.destroy();
+      tcs = new TableCellSelector(table, options, buffer);
+    };
+    document.getElementsByName("ignoreTfoot")[0].onclick = function (e) {
+      options["ignoreTfoot"] = this.checked;
+      tcs.destroy();
+      tcs = new TableCellSelector(table, options, buffer);
+    };
+
+    document.getElementById("select").onclick = function (e) {
+      e.preventDefault();
+      var coords = getCoord();
+      var res = tcs.select(coords[0], coords[1]);
+      console.log("select = " + res);
+    };
+    document.getElementById("select-all").onclick = function (e) {
+      e.preventDefault();
+      var res = tcs.selectAll();
+      console.log("selectAll = " + res);
+    };
+    document.getElementById("deselect").onclick = function (e) {
+      e.preventDefault();
+      var res = tcs.deselect();
+      console.log("deselect = " + res);
+    };
+    document.getElementById("coords").onclick = function (e) {
+      e.preventDefault();
+      var res = tcs.getCoords();
+      console.log("coords = " + (res ? "[["+res[0]+"],["+res[1]+"]]" : res));
+    };
+
+    document.getElementById("clear").onclick = function (e) {
+      e.preventDefault();
+      console.log("clear");
+      tcs.clear();
+    };
+    document.getElementById("copy").onclick = function (e) {
+      e.preventDefault();
+      console.log("copy");
+      console.log(tcs.copy());
+    };
+    document.getElementById("cut").onclick = function (e) {
+      e.preventDefault();
+      console.log("cut");
+      console.log(tcs.cut());
+    };
+    document.getElementById("paste").onclick = function (e) {
+      e.preventDefault();
+      console.log("paste");
+      console.log(tcs.paste(
+              [
+                ["a", "b", "c"],
+                ["d", "e", "f"],
+                ["g", "h", "i"]
+              ]
+      ));
+    };*/
+
+  /*  document.getElementById("init").onclick = function (e) {
+      e.preventDefault();
+      tcs = new TableCellSelector(table, options);
+      console.log("init");
+    };
+    document.getElementById("destroy").onclick = function (e) {
+      e.preventDefault();
+      tcs.destroy();
+      console.log("destroy");
+    };*/
+  });
+</script>
+</body>
+</html>

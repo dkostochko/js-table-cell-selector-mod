@@ -36,8 +36,7 @@
   },
   "browserslist": {
     "production": [
-      "supports es6-module",
-      "not IE 11"
+      "supports es6-module and not safari < 11 and not ios < 11"
     ],
     "development": [
       "last 1 chrome version",
