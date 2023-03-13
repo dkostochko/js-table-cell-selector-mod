@@ -1,11 +1,11 @@
 import {_gOptions} from "./app";
-import {isUndef} from "./funcs";
+import {hasClass, isUndef} from "./funcs";
 
 export default class Actions {
     obSelector;
     table;
 
-    constructor (obSelector) {
+    constructor(obSelector) {
         this.obSelector = obSelector;
         this.table = this.obSelector.table;
     }
@@ -16,13 +16,13 @@ export default class Actions {
      * @param c2
      * @returns {array[][]}
      */
-    copy (c1, c2) {
-        let ar = Array(c2[0] - c1[0] + 1 ).fill().map(
-            () => Array(c2[1] - c1[1] + 1 )
+    copy(c1, c2) {
+        let ar = Array(c2[0] - c1[0] + 1).fill().map(
+            () => Array(c2[1] - c1[1] + 1)
         );
 
         this.iterateCells(c1, c2, (iy, ix, cell) => {
-            ar[iy-c1[0]][ix-c1[1]] = _gOptions.getCellFn(cell, [iy, ix]);
+            ar[iy - c1[0]][ix - c1[1]] = _gOptions.getCellFn(cell, [iy, ix]);
         });
         return ar;
     }
@@ -32,9 +32,9 @@ export default class Actions {
      * @param c1
      * @param c2
      */
-    clear (c1, c2) {
+    clear(c1, c2) {
         this.iterateCells(c1, c2, (iy, ix, cell) => {
-            if (!this.obSelector.isIgnoredCell(cell)) {
+            if (!isIgnoredCell(cell)) {
                 _gOptions.setCellFn(cell, "", [iy, ix]);
             }
         });
@@ -46,20 +46,20 @@ export default class Actions {
      * @param c2
      * @returns {array[][]}
      */
-    cut (c1, c2) {
-        let ar = Array(c2[0] - c1[0] + 1 ).fill().map(
-            () => Array(c2[1] - c1[1] + 1 )
+    cut(c1, c2) {
+        let ar = Array(c2[0] - c1[0] + 1).fill().map(
+            () => Array(c2[1] - c1[1] + 1)
         );
         this.iterateCells(c1, c2, (iy, ix, cell) => {
-            ar[iy-c1[0]][ix-c1[1]] = _gOptions.getCellFn(cell, [iy, ix]);
-            if (!this.obSelector.isIgnoredCell(cell)) {
+            ar[iy - c1[0]][ix - c1[1]] = _gOptions.getCellFn(cell, [iy, ix]);
+            if (!isIgnoredCell(cell)) {
                 _gOptions.setCellFn(cell, "", [iy, ix]);
             }
         });
         return ar;
     }
 
-    iterateCells (c1, c2, callbackFn) {
+    iterateCells(c1, c2, callbackFn) {
         const matrix = this.obSelector.sizeMatrix;
         for (let iy = c1[0]; iy <= c2[0]; iy++) {
             const cells = this.table.rows[iy].cells;
@@ -71,14 +71,14 @@ export default class Actions {
         }
     }
 
-    mergeWithCell (cell, data, coord) {
+    mergeWithCell(cell, data, coord) {
         let cellVal = _gOptions.getCellFn(cell, coord).trim();
         if (cellVal === "") cellVal = data;
         else if (data !== "") cellVal += _gOptions.mergePastingGlue + data;
         _gOptions.setCellFn(cell, cellVal, coord);
     }
 
-    paste (data, c1, c2) {
+    paste(data, c1, c2) {
         const obSelector = this.obSelector;
         const matrix = obSelector.sizeMatrix;
         const countR = obSelector.countRows;
@@ -86,12 +86,12 @@ export default class Actions {
 
         let maxY = c1[0] + data.length;
         if (maxY > countR) maxY = countR;
-        if (!isUndef(c2) && maxY > c2[0]) maxY = c2[0]+1;
+        if (!isUndef(c2) && maxY > c2[0]) maxY = c2[0] + 1;
 
         for (let iy = c1[0]; iy < maxY; iy++) {
-            let maxX = c1[1] + data[iy-c1[0]].length;
+            let maxX = c1[1] + data[iy - c1[0]].length;
             if (maxX > countC) maxX = countC;
-            if (!isUndef(c2) && maxX > c2[1]) maxX = c2[1]+1;
+            if (!isUndef(c2) && maxX > c2[1]) maxX = c2[1] + 1;
 
             let cellFn;
             for (let ix = c1[1]; ix < maxX; ix++) {
@@ -107,10 +107,18 @@ export default class Actions {
                 }
 
                 let cell = this.table.rows[y].cells[matrix[y][x][2]];
-                if (!obSelector.isIgnoredCell(cell)) {
+                if (!isIgnoredCell(cell)) {
                     cellFn(cell, data[iy - c1[0]][ix - c1[1]], [y, x]);
                 }
             }
         }
     }
+}
+
+function isIgnoredCell(cell) {
+    const ppn = cell.parentNode.parentNode;
+    return hasClass(cell, _gOptions.ignoreClass) // td
+        || hasClass(cell.parentNode, _gOptions.ignoreClass) // tr
+        || (_gOptions.ignoreThead && ppn.tagName === "THEAD")
+        || (_gOptions.ignoreTfoot && ppn.tagName === "TFOOT");
 }
