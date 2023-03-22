@@ -1,5 +1,5 @@
 import {_gOptions} from "./app";
-import {getParentTags, isElement, on, off} from "./dom";
+import {getParentTags, isElement, off, on} from "./dom";
 import {addClass} from "./funcs";
 
 export default class Table {
@@ -50,7 +50,7 @@ export default class Table {
         off(table.ownerDocument, "click", this._onOutTableClick);
     }
 
-    get isMouse () {
+    get isMouse() {
         return this._isMouse;
     }
 
@@ -75,11 +75,17 @@ export default class Table {
         if (cell === null) return; // not for cell
 
         this.isMouseDown = true;
-
+        if (e.shiftKey && this.coord0) {
+            const [start, finish] = this.obSelector.getSelectedRectangleCoords();
+            if (start[0] === finish[0] && start[1] === finish[1]) {
+                this.selectRange(this.coord0, [cell.parentNode.rowIndex, cell.cellIndex]);
+                return;
+            }
+        }
         this.obSelector.deselectAll();
         this.obSelector.selectCell(cell);
         this.obEvent.startSelect(e, cell);
-        this.coord0 = [ cell.parentNode.rowIndex, cell.cellIndex ];
+        this.coord0 = [cell.parentNode.rowIndex, cell.cellIndex];
     }
 
     onMouseOver(e) {
@@ -91,15 +97,19 @@ export default class Table {
             return;
         }
 
-        let coords = this.obSelector.getSelectedRectangleCoords( this.coord0, [cell.parentNode.rowIndex, cell.cellIndex] );
-        if ( coords !== false ) this.obSelector.select(coords[0], coords[1]);
+        this.selectRange(this.coord0, [cell.parentNode.rowIndex, cell.cellIndex]);
     }
 
-    onMouseEnter () {
+    selectRange(coord0, coord1) {
+        let coords = this.obSelector.getSelectedRectangleCoords(coord0, coord1);
+        if (coords !== false) this.obSelector.select(coords[0], coords[1]);
+    }
+
+    onMouseEnter() {
         this._isMouse = true;
     }
 
-    onMouseLeave () {
+    onMouseLeave() {
         this._isMouse = false;
     }
 
